@@ -1,44 +1,31 @@
-# simple_shell
+Simple Shell Team Project
 
-# A simple C shell project
+Project was completed using
+C language
+Shell
+Betty linter
 
-## Description
+General Requirement for project
+All files are compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
+All files ends with a new line
 
-This is a simple UNIX command interpreter that replicates functionalities of the simple shell (sh). Additional functions are also included. This program was written entirely in C as a milestone project for Alx-Holberton School.
+A README.md file at the root of the folder of the project is mandatory
+Used the Betty style to check using betty-style.pl and betty-doc.pl
+Shell should not have any memory leaks
+No more than 5 functions per file
+All header files should be include guarded
+Write a README with the description of the project
+Description
+hsh is a simple UNIX command language interpreter that reads commands from either a file or standard input and executes them.
 
-## Installation
-
-Clone this repository into your working directory. Files should be compiled with GCC and the following flags: -Wall -Wextra -Werror -pedantic -Wno-format.
-
-## Usage
-
-After compilation, the resulting program can run stand-alone, either in interactive or non-interactive mode.
-
-## Interactive Mode
-
-In interactive mode, simply run the program and wait for the prompt to appear. From there, you can type commands freely, exiting with either the "exit" command or ctrl-D.
-
-## Non-Interactive Mode
-
-In non-interactive mode, echo your desired command and pipe it into the program like this:
-
-echo "ls" | ./shell
-In non-interactive mode, the program will exit after finishing your desired command(s).
-
-This is the man page which contains all functions and descriptions of all the functions used in this Simple shell project. To access this page, Do:
-
-## AUTHORS
-
-This file contains the details of all the individuals that contributed to this shell project.
-
-## Features
-
-1. DIsplay a prompt and wait for the user to type a command. A command-line always ends with a new line.
-2. The prompt is displayed again each time a command has been executed.
-3. The command lines are simple, no semicolons, no pipes, no redirections, or any other advanced features.
-4. The command lines are made only of one word.No arguement will be passed to the programs.
-5.If an executable is not found the shell prints an error message and displayu the prompt again.
-
-## Credits
-
-All codes written by Ademola Glory and Emmanuel Murairi.
+How hsh works
+Prints a prompt and waits for a command from the user
+Creates a child process in which the command is checked
+Checks for built-ins, aliases in the PATH, and local executable programs
+The child process is replaced by the command, which accepts arguments
+When the command is done, the program returns to the parent process and prints the prompt
+The program is ready to receive a new command
+To exit: press Ctrl-D or enter "exit" (with or without a status)
+Works also in non interactive mode
+Compilation
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
